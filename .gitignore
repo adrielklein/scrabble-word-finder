@@ -6,3 +6,4 @@ venv/
 
 #Python caching stuff
 .cache
+__pycache__
