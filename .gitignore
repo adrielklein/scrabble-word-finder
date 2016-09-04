@@ -1,0 +1,8 @@
+# virtualenv
+venv/
+
+#Pycharm IDE
+.idea
+
+#Python caching stuff
+.cache
