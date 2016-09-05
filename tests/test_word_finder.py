@@ -15,6 +15,6 @@ def test_when_letters_string_is_abc_then_word_finder_calls_anagram_finder_with_a
     monkeypatch.setattr(AnagramFinder, 'get_anagrams', Mock(side_effect=results_of_get_anagrams))
     word_finder = WordFinder(AnagramFinder([]))
     assert ['cab', 'ab', 'ba'] == word_finder.get_words('abc')
-    expected_calls = ['abc', 'ab', 'ac', 'bc']
-    AnagramFinder.get_anagrams.has_calls(expected_calls)
+    expected_calls = [call('ab'), call('ac'), call('bc'), call('abc')]
+    AnagramFinder.get_anagrams.assert_has_calls(expected_calls)
     assert 4 == AnagramFinder.get_anagrams.call_count
