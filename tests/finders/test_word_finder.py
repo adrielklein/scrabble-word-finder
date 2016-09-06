@@ -1,7 +1,7 @@
 from unittest.mock import Mock, call
 
-from app.anagram_finder import AnagramFinder
-from app.word_finder import WordFinder
+from app.finders.anagram_finder import AnagramFinder
+from app.finders.word_finder import WordFinder
 
 
 def test_when_letters_string_is_empty_then_word_finder_calls_anagram_finder_with_empty_string(monkeypatch):

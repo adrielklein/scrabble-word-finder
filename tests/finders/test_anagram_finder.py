@@ -1,4 +1,4 @@
-from app.anagram_finder import AnagramFinder
+from app.finders.anagram_finder import AnagramFinder
 
 
 def test_when_there_are_no_words_then_get_anagrams_returns_nothing():

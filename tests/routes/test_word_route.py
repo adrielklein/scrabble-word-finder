@@ -1,7 +1,7 @@
 import json
 from unittest.mock import Mock
 
-from app.word_finder import WordFinder
+from app.finders.word_finder import WordFinder
 
 
 def test_when_word_route_is_hit_then_returns_words(app, monkeypatch):
