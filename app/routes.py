@@ -17,5 +17,8 @@ class WordRoute(object):
         self._word_finder = word_finder
 
     def handle(self, letter_string):
-        result = {'words': self._word_finder.get_words(letter_string)}
-        return json.dumps(result)
+        is_valid_input = letter_string.isalpha()
+        status_code = 200 if is_valid_input else 400
+        response = {'words': self._word_finder.get_words(letter_string)} if is_valid_input else {
+            'errorMessage': 'Requested letter string has non-alpha characters'}
+        return json.dumps(response), status_code
