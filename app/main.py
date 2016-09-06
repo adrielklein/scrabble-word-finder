@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask
 
 from app.anagram_finder import AnagramFinder
