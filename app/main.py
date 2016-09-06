@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 
 from app.anagram_finder import AnagramFinder
@@ -10,9 +12,15 @@ def _set_up_routes(routes, app):
         app.add_url_rule(route.path, route.endpoint, route.handle)
 
 
+def _get_words():
+    print(os.listdir())
+    with open('twl06.txt') as f:
+        return f.read().split('\n')
+
+
 def create_app():
     app = Flask(__name__)
-    word_finder = WordFinder(AnagramFinder([]))
+    word_finder = WordFinder(AnagramFinder(_get_words()))
     routes = [AcknowledgeRoute(), WordRoute(word_finder)]
     _set_up_routes(routes, app)
 
