@@ -13,7 +13,6 @@ def _set_up_routes(routes, app):
 
 
 def _get_words():
-    print(os.listdir())
     with open('twl06.txt') as f:
         return f.read().split('\n')
 
