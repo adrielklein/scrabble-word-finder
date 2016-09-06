@@ -2,7 +2,7 @@ from flask import Flask
 
 from app.finders.anagram_finder import AnagramFinder
 from app.finders.word_finder import WordFinder
-from app.routes import AcknowledgeRoute, WordRoute
+from app.routes import AcknowledgeRoute, WordRoute, FrontEndRoute
 
 
 def _set_up_routes(routes, app):
@@ -18,7 +18,7 @@ def _get_words():
 def create_app():
     app = Flask(__name__)
     word_finder = WordFinder(AnagramFinder(_get_words()))
-    routes = [AcknowledgeRoute(), WordRoute(word_finder)]
+    routes = [AcknowledgeRoute(), WordRoute(word_finder), FrontEndRoute()]
     _set_up_routes(routes, app)
 
     return app
