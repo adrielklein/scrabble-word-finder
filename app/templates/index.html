@@ -13,13 +13,31 @@
 </head>
 <body>
 <header></header>
-<div class="text-center">
+
+<div class="container text-center">
     <h1>Scrabble Word Finder</h1>
+</div>
+<div class="container text-center">
     <input type="text" id="word" value="">
-    <button onclick="showWords()">Get Words</button>
+    <button type="button" class="btn btn-default" onclick="showWords()">Get Words</button>
 
     <p id="message"></p>
-    <p id="list-of-words" class="list-of-words"></p>
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div id="panel" class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse1">Words</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <ul id="list-of-words" class="list-group">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<ul id="list-of-words" class="list-of-words list-group"></ul>-->
 </div>
 <footer class="footer text-center">
     <h5 class="text-muted">Created by Adriel Klein (<a href="mailto:adrielmklein@gmail.com" target="_top">adrielmklein@gmail.com</a>).

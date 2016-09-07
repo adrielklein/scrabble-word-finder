@@ -22,7 +22,7 @@ function showWords() {
 function getList(array) {
     var listElements = ""
     for (var i = 0; i < array.length; i++) {
-        listElements += "<li>" + array[i] + "</li>"
+        listElements += "<li class='list-group-item'>" + array[i] + "</li>"
     }
     return "<ul>" + listElements + "</ul>";
 }
