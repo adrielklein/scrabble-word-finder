@@ -12,12 +12,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script>
+$(function(){
+$('.clickable').on('click',function(){
+    var effect = $(this).data('effect');
+        $(this).closest('.panel')[effect]();
+	})
+})
 
     </script>
     <title>Scrabble Word Finder</title>
 </head>
 <body>
 <header></header>
+
 
 <div class="container text-center">
     <h1>Scrabble Word Finder</h1>
@@ -31,7 +38,7 @@
                 <div id="panel" class="panel-heading">
                     <h4 class="panel-title">
                         <a id="panel-title" data-toggle="collapse" href="#collapse1"><span id="badge"
-                                                                                                class="badge"></span></a>
+                                                                                           class="badge"></span></a>
                         <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
                     </h4>
                 </div>
