@@ -1,4 +1,13 @@
+$(function(){
+$('.clickable').on('click',function(){
+    var effect = $(this).data('effect');
+        $(this).closest('.panel')[effect]();
+	})
+})
+
 function showWords() {
+    $("#resultsDiv").fadeIn(1000);
+
     var word = document.getElementById("word").value;
     var url = "/words/" + word;
 
@@ -20,7 +29,7 @@ function showWords() {
 
 function getPanelTitle(numWords){
     var word = document.getElementById("word").value;
-    return "Words for " + word + "<span id='badge' class='badge'> "+ numWords +"</span>";
+    return "Words for  " + word + "<span id='badge' class='badge'> "+ numWords +"</span>";
     }
 
 function getHTMLList(array) {

@@ -6,16 +6,12 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/custom.css">
+    <!--CSS for Closing Panel Effect-->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <script src="/static/word_retriever.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script>
-$(document).ready(function(){
-$("button").click(function(){
-
-    $("#resultsDiv").fadeIn(1000);
-    });
-});
 
     </script>
     <title>Scrabble Word Finder</title>
@@ -36,6 +32,7 @@ $("button").click(function(){
                     <h4 class="panel-title">
                         <a id="panel-title" data-toggle="collapse" href="#collapse1"><span id="badge"
                                                                                                 class="badge"></span></a>
+                        <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
                     </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse">
