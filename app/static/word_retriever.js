@@ -10,16 +10,14 @@ function showWords() {
     function processRequest(e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var words = JSON.parse(xhr.responseText)["words"];
-            num_words = words.length
-            sing_or_plu = (num_words == 1) ? " word: " : " words: "
-            message = "Found " + num_words + sing_or_plu;
-            displayMessage(message);
-            displayWords(getList(words));
+            document.getElementById("badge").innerHTML = words.length
+            document.getElementById('resultsDiv').style.display = "block";
+            document.getElementById("list-of-words").innerHTML = getHTMLList(words)
          }
     }
 }
 
-function getList(array) {
+function getHTMLList(array) {
     var listElements = ""
     for (var i = 0; i < array.length; i++) {
         listElements += "<li class='list-group-item'>" + array[i] + "</li>"
@@ -27,9 +25,3 @@ function getList(array) {
     return "<ul>" + listElements + "</ul>";
 }
 
-function displayMessage(value) {
-    document.getElementById("message").innerHTML = value
-}
-function displayWords(words) {
-    document.getElementById("list-of-words").innerHTML = words
-}
