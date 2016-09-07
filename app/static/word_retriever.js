@@ -10,12 +10,18 @@ function showWords() {
     function processRequest(e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var words = JSON.parse(xhr.responseText)["words"];
-            document.getElementById("badge").innerHTML = words.length
+            var word = document.getElementById("word").value;
+            document.getElementById("panel-title").innerHTML = getPanelTitle(words.length);
             document.getElementById('resultsDiv').style.display = "block";
             document.getElementById("list-of-words").innerHTML = getHTMLList(words)
          }
     }
 }
+
+function getPanelTitle(numWords){
+    var word = document.getElementById("word").value;
+    return "Words for " + word + "<span id='badge' class='badge'> "+ numWords +"</span>";
+    }
 
 function getHTMLList(array) {
     var listElements = ""
