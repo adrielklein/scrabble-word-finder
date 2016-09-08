@@ -8,51 +8,27 @@
     <link rel="stylesheet" href="/static/custom.css">
     <!--CSS for Closing Panel Effect-->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <script src="/static/word_retriever.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="/static/word_retriever.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
-$(function(){
-$('.clickable').on('click',function(){
-    var effect = $(this).data('effect');
-        $(this).closest('.panel')[effect]();
-	})
-})
-
-    </script>
     <title>Scrabble Word Finder</title>
 </head>
 <body>
-<header></header>
+    <header></header>
 
 
-<div class="container text-center">
-    <h1>Scrabble Word Finder</h1>
-</div>
-<div class="container text-center">
-    <input type="text" id="word" value="">
-    <button type="button" class="btn btn-default" onclick="showWords()">Get Words</button>
-    <div id="resultsDiv" class="container" style="display:none;width:500px;">
-        <div class="panel-group">
-            <div class="panel panel-default">
-                <div id="panel" class="panel-heading">
-                    <h4 class="panel-title">
-                        <a id="panel-title" data-toggle="collapse" href="#collapse1"><span id="badge"
-                                                                                           class="badge"></span></a>
-                        <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse">
-                    <ul id="list-of-words" class="list-group">
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="container text-center">
+        <h1>Scrabble Word Finder</h1>
     </div>
-</div>
-<footer class="footer text-center">
-    <h5 class="text-muted">Created by Adriel Klein (<a href="mailto:adrielmklein@gmail.com" target="_top">adrielmklein@gmail.com</a>).
-    </h5>
-</footer>
+    <div class="container text-center">
+
+        <input type="text" id="letters" value="">
+        <button type="button" class="btn btn-default">Get Words</button>
+        <div id="word-panels"></div>
+    </div>
+    <footer class="footer text-center">
+        <h5 class="text-muted">Created by Adriel Klein (<a href="mailto:adrielmklein@gmail.com" target="_top">adrielmklein@gmail.com</a>).
+        </h5>
+    </footer>
 </body>
 </html>
