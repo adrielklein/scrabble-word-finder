@@ -24,7 +24,7 @@ function setWordPanelFurther(response){
 
     $(function(){
     $("#" + collapseId).on('click',function(){
-        $("#" + panelId).remove();
+        $("#" + panelId)['slideUp']()
     })
 })
 }
@@ -37,7 +37,7 @@ function getWordPanel(panelTitle, listOfWords, panelId, collapseId){
                     <div class="panel-heading">\
                         <h4 class="panel-title">\
                             <a data-toggle="collapse" href="#'+toggleId+'">'+panelTitle+'</a>\
-                             <span id="'+collapseId+'" class="pull-right" data-effect="slideUp"><i class="fa fa-times"></i></span>\
+                             <span id="'+collapseId+'" class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>\
                          </h4>\
                      </div>\
                      <div id="'+toggleId+'" class="panel-collapse collapse">\
