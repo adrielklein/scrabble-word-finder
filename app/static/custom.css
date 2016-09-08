@@ -1,5 +1,5 @@
 body {
-    background: url(/static/img/background.png) repeat 0 0;
+    background: url(/static/img/dark_embroidery.png) repeat 0 0;
     margin-bottom: 60px;
 }
 
@@ -22,4 +22,28 @@ html
 {
 	min-height: 100%;
 	position: relative;
+}
+
+.panel-heading span
+{
+    margin-top: -5px;
+    font-size: 15px;
+    margin-right: -12px;
+}
+
+.clickable {
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h1 {
+    color:white;
+    font-weight: bolder;
+}
+
+#word-panels{
+    margin-top: 10px;
 }
