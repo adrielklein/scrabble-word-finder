@@ -19,4 +19,4 @@ def test_when_server_starts_then_load_up_words(app):
         response = test_client.get('/words/aht')
         assert 200 == response.status_code
         response_string = response.get_data().decode()
-        assert ['at', 'hat'] == json.loads(response_string)['words']
+        assert ['hat', 'at'] == json.loads(response_string)['words']

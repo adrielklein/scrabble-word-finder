@@ -17,4 +17,4 @@ class WordFinder(object):
         words = set()
         for combination in _get_combinations(letters_string):
             words.update(self._anagram_finder.get_anagrams(combination))
-        return list(words)
+        return sorted(words, key=lambda word: (-len(word), word))
