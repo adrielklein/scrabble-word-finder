@@ -14,7 +14,7 @@ class WordFinder(object):
         self._anagram_finder = anagram_finder
 
     def get_words(self, letters_string):
-        result = []
+        words = set()
         for combination in _get_combinations(letters_string):
-            result.extend(self._anagram_finder.get_anagrams(combination))
-        return result
+            words.update(self._anagram_finder.get_anagrams(combination))
+        return list(words)
