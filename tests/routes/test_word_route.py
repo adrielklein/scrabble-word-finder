@@ -23,8 +23,8 @@ def test_when_requested_word_is_not_alpha_then_server_gives_an_error(app, monkey
 
 
 def test_when_letters_are_uppercase_then_then_get_lowercased(app, monkeypatch):
-    mocked_method = Mock()
     monkeypatch.setattr(json, 'dumps', Mock(return_value=''))
+    mocked_method = Mock()
     monkeypatch.setattr(WordFinder, 'get_words', mocked_method)
     with app.test_client() as test_client:
         test_client.get('/words/Fakeword')
