@@ -47,3 +47,7 @@ h1 {
 #word-panels{
     margin-top: 10px;
 }
+
+button:hover {
+  background: #CF4647;
+}
