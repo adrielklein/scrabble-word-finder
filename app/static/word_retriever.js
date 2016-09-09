@@ -16,11 +16,14 @@ function setWordPanelFurther(response){
     var words = response['words'];
     panelTitle = getPanelTitle(words.length)
     listOfWords = getHTMLList(words)
+    document.getElementById("letters").value = "";
+
     var panelId = new Date().getTime()
     var collapseId = panelId +1
     wordPanel = getWordPanel(panelTitle, listOfWords, panelId, collapseId);
 
-    $("#word-panels").append(wordPanel);
+    $("#word-panels").prepend(wordPanel);
+    $("#" + panelId)['slideDown']();
 
     $(function(){
     $("#" + collapseId).on('click',function(){
@@ -31,7 +34,7 @@ function setWordPanelFurther(response){
 
 function getWordPanel(panelTitle, listOfWords, panelId, collapseId){
     var toggleId = collapseId + 1;
-    return '<div id="'+panelId+'" class="container" style="width:320px;">\
+    return '<div id="'+panelId+'" class="container" style="width:320px;display:none;">\
             <div class="panel-group">\
                 <div class="panel panel-default">\
                     <div class="panel-heading">\
