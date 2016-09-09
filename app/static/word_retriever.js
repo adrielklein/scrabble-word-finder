@@ -4,7 +4,6 @@ $(document).ready(function(){
     });
 });
 
-
 function setWordPanel(){
     var letters = document.getElementById("letters").value;
     var url = "/words/" + letters;
