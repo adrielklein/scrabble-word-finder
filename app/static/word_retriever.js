@@ -4,9 +4,19 @@ $(document).ready(function(){
     });
 });
 
+function getAlertHTML(){
+    return '<div class="alert alert-warning">\
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>\
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.\
+  </div>'
+}
 
 function setWordPanel(){
     var letters = document.getElementById("letters").value;
+    if (letters == "") {
+        $("#word-panels").prepend(getAlertHTML());
+        return;
+    }
     var url = "/words/" + letters;
 
     $.getJSON(url, setWordPanelFurther);
