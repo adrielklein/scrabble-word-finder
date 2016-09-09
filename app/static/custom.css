@@ -39,11 +39,6 @@ html
     cursor: pointer;
 }
 
-h1 {
-    color:white;
-    font-weight: bolder;
-}
-
 #word-panels{
     margin-top: 10px;
 }
