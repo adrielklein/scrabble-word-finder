@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/static/custom.css">
     <!--CSS for Closing Panel Effect-->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    
+
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="/static/word_retriever.js"></script>
@@ -18,9 +18,12 @@
 <body>
     <header></header>
     <div class="container panel text-center" style="padding:1%;margin-top:2%;width:65%;">
+        <img src="static/img/dragon.png" class="img-responsive" style="width:100px;height:100px;float:left;">
+        <img src="static/img/dragon.png" class="img-responsive" style="width:100px;height:100px;float:right;">
         <h1 style="color:black;">Scrabble Word Finder</h1>
         <input type="text" id="letters" placeholder="What are your letters?">
         <button type="button" class="btn btn-default">Get Words!</button>
+
     </div>
     <div class="container text-center">
 
