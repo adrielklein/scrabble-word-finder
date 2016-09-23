@@ -8,7 +8,7 @@ class AnagramFinder(object):
         self._words = words
 
     @cached_property
-    def _alphagram_to_words(self):
+    def _alphagram_2_words(self):
         result = defaultdict(lambda: set())
         for word in self._words:
             alphagram = ''.join(sorted(word))
@@ -17,4 +17,4 @@ class AnagramFinder(object):
 
     def get_anagrams(self, letter_string):
         alphagram = ''.join(sorted(letter_string))
-        return sorted(list(self._alphagram_to_words[alphagram]))
+        return sorted(list(self._alphagram_2_words[alphagram]))
