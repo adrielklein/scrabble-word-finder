@@ -26,7 +26,7 @@ Scrabble word finder is a web app that turns novice scrabble players into champi
 
 The server is written in Python and uses [Flask](http://flask.pocoo.org/) as a web framework.
 
-The business logic of the application can be categorized into three main parts
+The business logic of the application can be categorized into three main parts...
 
 1. **Anagram Finder**
 
