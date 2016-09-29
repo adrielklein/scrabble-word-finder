@@ -31,4 +31,4 @@ class FrontEndRoute(object):
     endpoint = 'front_end'
 
     def handle(self):
-        return render_template('index.html')
+        return render_template('layout.html')
