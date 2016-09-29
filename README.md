@@ -14,7 +14,7 @@ Scrabble word finder is a web app that turns novice scrabble players into champi
 1. Install virtualenv `pip install virtualenv`
 1. Create a virtual environment `virtualenv venv`
 1. Activate the virtual environment `source venv/bin/activate`
-1. Install pependencies `pip install -r requirements.txt`
+1. Install dependencies `pip install -r requirements.txt`
 
 ### Running the server
 - Run `python start_server.py`
