@@ -28,13 +28,13 @@ The server is written in Python and uses [Flask](http://flask.pocoo.org/) as a w
 
 The business logic of the application can be categorized into three main parts
 
-1. Anagram Finder
+1. **Anagram Finder**
 
    Takes in strings and returns anagrams using a special hash table. The hash table maps alphagrams to words. 
-2. Word Finder
+2. **Word Finder**
 
    Finds all combinations of string of lengths 2, 3, .., n where n is the length of the string. Then uses the Anagram Finder to get words for those strings.
-3. Word Finder route
+3. **Word Finder Route**
 
    Verifies that the input string is valid and asks the Word Finder for the corresponding words.
 
