@@ -1,11 +1,12 @@
 [![Build Status](https://travis-ci.org/adrielklein/scrabble-word-finder.svg?branch=master)](https://travis-ci.org/adrielklein/scrabble-word-finder)
+[![Heroku Status](https://heroku-badge.herokuapp.com/?app=scrabble-word-finder)](http://scrabble-word-finder.herokuapp.com)
 
 ## :smile: Welcome to Scrabble Word Finder :smile:
 Scrabble word finder is a web app that turns novice scrabble players into champions!
 
 ### Routes
-- `GET /`: Returns HTML. This is the main route for interacting with the application.
-- `GET /words/<letters>`: Takes in a string of scrabble letters as a URI param and returns all scrabble words formed from them.
+- `GET /`: Returns the HTML for the web app
+- `GET /words/<letters>`: Takes in a string of scrabble letters as a URI param and returns a JSON file with resulting scrabble words
 
 ### Build Instructions
 1. Download and install [Python 3.5](https://www.python.org/downloads/release/python-350/)
@@ -30,7 +31,7 @@ The business logic of the application can be categorized into three main parts..
 
 1. **Anagram Finder**
 
-   Takes in strings and returns anagrams using a special hash table. The hash table maps alphagrams to words. 
+   Takes in a string and returns its anagrams using a special hash table. The hash table maps alphagrams to words. For example `dgo` maps to `['dog', 'god']`.
 2. **Word Finder**
 
    Finds all combinations of string of lengths `2, 3, .., n` where `n` is the length of the string. Then uses the Anagram Finder to get words for those strings.
