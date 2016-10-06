@@ -31,7 +31,7 @@ The business logic of the application can be categorized into three main parts..
 
 1. **Anagram Finder**
 
-   Takes in strings and returns anagrams using a special hash table. The hash table maps alphagrams to words. 
+   Takes in a string and returns its anagrams using a special hash table. The hash table maps alphagrams to words. For example `dgo` maps to `['dog', 'god']`.
 2. **Word Finder**
 
    Finds all combinations of string of lengths `2, 3, .., n` where `n` is the length of the string. Then uses the Anagram Finder to get words for those strings.
