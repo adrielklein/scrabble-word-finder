@@ -5,8 +5,8 @@
 Scrabble word finder is a web app that turns novice scrabble players into champions!
 
 ### Routes
-- `GET /`: Returns HTML. This is the main route for interacting with the application.
-- `GET /words/<letters>`: Takes in a string of scrabble letters as a URI param and returns all scrabble words formed from them.
+- `GET /`: Returns the HTML for the web app
+- `GET /words/<letters>`: Takes in a string of scrabble letters as a URI param and returns a JSON file with resulting scrabble words.
 
 ### Build Instructions
 1. Download and install [Python 3.5](https://www.python.org/downloads/release/python-350/)
