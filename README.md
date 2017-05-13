@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/adrielklein/scrabble-word-finder.svg?branch=master)](https://travis-ci.org/adrielklein/scrabble-word-finder)
-[Live App](http://scrabble-word-finder.herokuapp.com/)
 
 ## :smile: Welcome to Scrabble Word Finder :smile:
 Scrabble word finder is a web app that turns novice scrabble players into champions!
