@@ -4,7 +4,7 @@
 Scrabble word finder is a web app that turns novice scrabble players into champions!
 
 ### Routes
-- `GET /`: Returns the HTML for the web app
+- `GET /`: Returns the content of the app
 - `GET /words/<letters>`: Takes in a string of scrabble letters as a URI param and returns a JSON file with resulting scrabble words
 
 ### Build Instructions
