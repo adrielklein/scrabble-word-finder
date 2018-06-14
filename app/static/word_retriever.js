@@ -52,7 +52,7 @@ function getWordPanel(panelTitle, listOfWords, panelId, collapseId){
 
 function getPanelTitle(numWords){
     var letters = document.getElementById("letters").value;
-    return letters + "<span id='badge' class='badge'> "+ numWords +" words</span>";
+    return letters + "&nbsp;&nbsp;&nbsp; <span id='badge' class='badge'> "+ numWords +" words</span>";
 }
 
 function getHTMLList(array) {
