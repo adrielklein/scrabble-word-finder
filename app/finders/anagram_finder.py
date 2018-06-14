@@ -4,6 +4,8 @@ from werkzeug.utils import cached_property
 
 
 class AnagramFinder(object):
+    words = []
+
     def __init__(self, words):
         self._words = words
 
