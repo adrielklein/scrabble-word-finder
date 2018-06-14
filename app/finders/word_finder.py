@@ -24,7 +24,6 @@ def _get_words(self, letters_string):
         match = re.match(letters_string, word, re.IGNORECASE)
         if match:                      
             result.add(word + ': ' + str(_get_word_score(word)))
-    #print('result',result)
     return result
 
 class WordFinder(object):
