@@ -10,11 +10,13 @@ def _get_combinations(letters_string):
 
 def _get_words(self, letters_string):
     result = set()
+    letters_string = '\\b' + letters_string + '\\b'
     words = self._anagram_finder._words
     for word in words:
-        match = re.search(letters_string, word, re.IGNORECASE)
+        match = re.match(letters_string, word, re.IGNORECASE)
         if match:                      
-            result.add(match.group())
+            result.add(word)
+    #print('result',result)
     return result
 
 class WordFinder(object):
