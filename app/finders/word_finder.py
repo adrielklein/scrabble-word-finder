@@ -16,13 +16,31 @@ def _get_combinations(letters_string):
             result.append(''.join(combination))
     return result
 
+def gen_letters_map(word):
+    letters_map = {}
+    for x in word:
+        if x.isalpha():
+            if (not x in letters_map):
+                letters_map[x] = 0
+            letters_map[x] += 1
+    return letters_map
+
+def same_letters_count(expected, got):
+    map1 = gen_letters_map(expected)  
+    map2 = gen_letters_map(got)
+    for x in map2:
+        if map2[x] > map1[x]:
+            return False
+    return True
+
 def _get_words(self, letters_string):
     result = set()
+    orig_letters_string = letters_string
     letters_string = '\\b' + letters_string + '\\b'
     words = self._anagram_finder._words
     for word in words:
         match = re.match(letters_string, word, re.IGNORECASE)
-        if match:                      
+        if match and same_letters_count(orig_letters_string, word):                    
             result.add(word + ': ' + str(_get_word_score(word)))
     return result
 
