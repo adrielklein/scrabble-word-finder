@@ -26,30 +26,74 @@ def gen_letters_map(word):
     return letters_map
 
 def same_letters_count(expected, got):
+    print('expected', expected)
+    print('got', got)
+
     map1 = gen_letters_map(expected)  
     map2 = gen_letters_map(got)
+
+    print('map2', map2)
+    print('map1', map1)
+
     for x in map2:
         if map2[x] > map1[x]:
             return False
     return True
 
-def _get_words(self, letters_string):
+def _get_letters_from(str):
+    result = ''
+    for i in range(0, len(str)):
+        if str[i].isalpha():
+            result += str[i]
+    return result
+
+def _get_words(self, letters_string, pattern):
     result = set()
     orig_letters_string = letters_string
-    letters_string = '\\b' + letters_string + '\\b'
+    pattern_letters = _get_letters_from(pattern)
+    letters_string = '\\b' + _gen_regex(letters_string, pattern) + '\\b'
+
+    print('orig_letters_string', orig_letters_string)
+    print('letters_string', letters_string)
+
     words = self._anagram_finder._words
     for word in words:
         match = re.match(letters_string, word, re.IGNORECASE)
-        if match and same_letters_count(orig_letters_string, word):                    
+        if match and same_letters_count(orig_letters_string + pattern_letters, word):                    
             result.add(word + ': ' + str(_get_word_score(word)))
+    return result
+
+def _gen_regex (letters_string, pattern):
+    print('request pattern', pattern)
+
+    result = set()
+    regex_pattern = ''
+    i = 0
+    while (i < len(pattern)):
+        if pattern[i].isalpha():
+            regex_pattern += pattern[i]
+        else:
+            j = i
+            while (j+1 < len(pattern)) and (not pattern[j+1].isalpha()):
+                j+=1
+            cnt = j-i+1
+            i = j
+            regex_pattern += '[' + letters_string + ']{' + str(cnt) + '}'
+        i+=1
+    print('regex_pattern', regex_pattern)
+    return regex_pattern
+            
+
+    
+
     return result
 
 class WordFinder(object):
     def __init__(self, anagram_finder):
         self._anagram_finder = anagram_finder
 
-    def get_words(self, letters_string):
+    def get_words(self, letters_string, pattern):
         words = set()
-        for word in _get_words(self, letters_string):
+        for word in _get_words(self, letters_string, pattern):
             words.update([word])
         return sorted(words, key=lambda word: (-len(word), word))

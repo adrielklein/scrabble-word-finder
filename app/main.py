@@ -17,6 +17,7 @@ def _get_words():
 
 def create_app():
     app = Flask(__name__)
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
     word_finder = WordFinder(AnagramFinder(_get_words()))
     routes = [AcknowledgeRoute(), WordRoute(word_finder), FrontEndRoute()]
     _set_up_routes(routes, app)

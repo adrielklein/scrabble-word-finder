@@ -1,13 +1,14 @@
 $(document).ready(function(){
-    $("button").click(function(){
-        setWordPanel()
+    $("#submit").click(function(){
+        setWordPanel();
     });
 });
 
 function setWordPanel(){
     var letters = document.getElementById("letters").value;
-    var url = "/words/" + letters;
-
+    var pattern = document.getElementById("pattern").value;
+    var url = "/words/" + letters + "|" + pattern;
+    console.log('url', url);
     $.getJSON(url, setWordPanelFurther);
 }
 
@@ -16,6 +17,7 @@ function setWordPanelFurther(response){
     panelTitle = getPanelTitle(words.length)
     listOfWords = getHTMLList(words)
     document.getElementById("letters").value = "";
+    document.getElementById("pattern").value = "";
 
     var panelId = new Date().getTime()
     var collapseId = panelId +1
