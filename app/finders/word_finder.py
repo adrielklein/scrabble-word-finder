@@ -26,14 +26,14 @@ def gen_letters_map(word):
     return letters_map
 
 def same_letters_count(expected, got):
-    print('expected', expected)
-    print('got', got)
+    # print('expected:', expected)
+    # print('got:', got)
 
-    map1 = gen_letters_map(expected)  
-    map2 = gen_letters_map(got)
+    map1 = gen_letters_map(expected.lower())  
+    map2 = gen_letters_map(got.lower())
 
-    print('map2', map2)
-    print('map1', map1)
+    # print('map2', map2)
+    # print('map1', map1)
 
     for x in map2:
         if map2[x] > map1[x]:
@@ -53,8 +53,8 @@ def _get_words(self, letters_string, pattern):
     pattern_letters = _get_letters_from(pattern)
     letters_string = '\\b' + _gen_regex(letters_string, pattern) + '\\b'
 
-    print('orig_letters_string', orig_letters_string)
-    print('letters_string', letters_string)
+    # print('orig_letters_string', orig_letters_string)
+    # print('letters_string', letters_string)
 
     words = self._anagram_finder._words
     for word in words:
@@ -64,7 +64,7 @@ def _get_words(self, letters_string, pattern):
     return result
 
 def _gen_regex (letters_string, pattern):
-    print('request pattern', pattern)
+    # print('request pattern', pattern)
 
     result = set()
     regex_pattern = ''
@@ -80,7 +80,6 @@ def _gen_regex (letters_string, pattern):
             i = j
             regex_pattern += '[' + letters_string + ']{' + str(cnt) + '}'
         i+=1
-    print('regex_pattern', regex_pattern)
     return regex_pattern
             
 

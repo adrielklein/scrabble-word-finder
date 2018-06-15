@@ -16,8 +16,6 @@ function setWordPanelFurther(response){
     var words = response['words'];
     panelTitle = getPanelTitle(words.length)
     listOfWords = getHTMLList(words)
-    document.getElementById("letters").value = "";
-    document.getElementById("pattern").value = "";
 
     var panelId = new Date().getTime()
     var collapseId = panelId +1
