@@ -1,5 +1,6 @@
 import itertools
 import re
+import string
 
 def _get_word_score(word):
     scores = {'a':1, 'b':4, 'c':4, 'd':2, 'e':1, 'f':4, 'g':3, 'h':3, 'i':1, 'j':10, 'k':5, 'l':2, 'm':4, 'n':2, 'o':2, 'p':4, 'q':10, 'r':1, 's':4, 't':1, 'u':2, 'v':5, 'w':4, 'x':8, 'y':3, 'z':10}
@@ -32,6 +33,10 @@ def same_letters_count(expected, got):
     map1 = gen_letters_map(expected.lower())  
     map2 = gen_letters_map(got.lower())
 
+    for c in string.ascii_letters:
+        if not c in map1:
+            map1[c] = 0
+
     # print('map2', map2)
     # print('map1', map1)
 
@@ -51,7 +56,7 @@ def _get_words(self, letters_string, pattern):
     result = set()
     orig_letters_string = letters_string
     pattern_letters = _get_letters_from(pattern)
-    letters_string = '\\b' + _gen_regex(letters_string, pattern) + '\\b'
+    letters_string =  _gen_regex(letters_string, pattern)
 
     # print('orig_letters_string', orig_letters_string)
     # print('letters_string', letters_string)
